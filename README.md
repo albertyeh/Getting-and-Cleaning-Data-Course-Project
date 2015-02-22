@@ -19,9 +19,6 @@ Perform it to output tidy data set with with the average of each variable for ea
 'CodeBook.md':
 Describe the variables, the data, and any transformations or work that was performed to clean up the data.
 
-'UCI HAR Dataset/\*.\*:
-Dataset sample for testing.
-
 'averages_tidy_data.txt':
 Output file for Step 5.
 
