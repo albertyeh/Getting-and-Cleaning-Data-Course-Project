@@ -15,7 +15,7 @@ subject          | Combind s1 and s2 by row
 features         | load/store feature names from `features.txt`
 ds               | Combind x , y and subkect by column
 sel              | Selected fields for step 5
-averages         | Output result for step 5
+averages         | The average of each variable for each activity and each subject
 
 
 run_analysis() 
