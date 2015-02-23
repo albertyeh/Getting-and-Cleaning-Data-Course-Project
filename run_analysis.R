@@ -20,7 +20,7 @@ run_analysis<-function()
     # 2.Extract only the measurements on the mean and standard deviation for each measurement.
     features <- read.table(file.path(".", "UCI HAR Dataset", "features.txt"),stringsAsFactors=FALSE)
     colnames(x) <-  c(features[,2])
-    x <- x[, grep("mean|std|Mean", names(x))]
+    x <- x[, grep("mean|std", names(x))]
     
     #3. Use descriptive activity names to name the activities in the data set.
     activity_names <- read.table(file.path(".", "UCI HAR Dataset", "activity_labels.txt"),stringsAsFactors=FALSE)
@@ -33,9 +33,8 @@ run_analysis<-function()
     #5.From the data set in step 4, creates a second, independent tidy data set with the average of each
     #  variable for each activity and each subject
     ds <- cbind(x, y, subject)
-    sel<-c(1:86)
+    sel<-c(1:79)
     averages <- ddply(ds, .(activity_name,subject), function(x) colMeans(x[,sel]))
     write.table(averages, "averages_tidy_data.txt", row.name=FALSE)
     cat("End","\n")
-    
 }    
